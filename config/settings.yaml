@@ -1,0 +1,97 @@
+# AI News Brief Generator Settings
+app:
+  name: "AI News Brief"
+  version: "1.0.0"
+  tagline: "Curated Daily Intelligence for AI Researchers, Engineers & Leaders"
+
+ingestion:
+  default_lookback_hours: 24
+  max_articles_per_source: 25
+  request_timeout_seconds: 12
+  max_workers: 8
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AI-News-Brief/1.0"
+  ai_keywords:
+    - "ai"
+    - "artificial intelligence"
+    - "llm"
+    - "gpt"
+    - "chatgpt"
+    - "claude"
+    - "anthropic"
+    - "openai"
+    - "deepmind"
+    - "gemini"
+    - "meta ai"
+    - "llama"
+    - "mistral"
+    - "neural"
+    - "machine learning"
+    - "deep learning"
+    - "transformer"
+    - "diffusion"
+    - "multimodal"
+    - "robotics"
+    - "humanoid"
+    - "autonomous"
+    - "agent"
+    - "agentic"
+    - "hugging face"
+    - "nvidia"
+    - "gpu"
+    - "cuda"
+    - "copilot"
+    - "synthetic data"
+    - "reasoning model"
+    - "superintelligence"
+    - "agi"
+
+deduplication:
+  similarity_threshold: 0.62     # Combined similarity threshold (0.0 to 1.0)
+  jaccard_weight: 0.4
+  sequence_weight: 0.6
+  containment_boost: true        # Boost score if one title's key tokens are fully contained in another
+  canonical_selection_strategy: "most_detailed" # Options: most_detailed, highest_weight, earliest
+
+ranking:
+  weights:
+    base_relevance: 2.0
+    recency: 2.5
+    source_weight: 1.5
+    multi_coverage_bonus: 3.0    # Substantial boost for stories covered by 2+ independent outlets
+    virality: 1.5                # HN points, HF upvotes
+  recency_decay_hours: 36        # Half-life scale for recency scoring
+  min_display_score: 1.5
+
+brief:
+  top_stories_limit: 5
+  section_limit: 4
+  include_why_it_matters: true
+  categories:
+    top_headlines:
+      title: "🚀 Top Headlines & Breaking News"
+      description: "The most impactful and widely covered stories in tech & AI today"
+    research:
+      title: "🔬 Frontier Research & Breakthroughs"
+      description: "Novel architectures, benchmark discoveries, and academic advances"
+    industry:
+      title: "💼 Industry, Big Tech & Capital"
+      description: "Funding rounds, acquisitions, corporate strategy, and commercial rollouts"
+    dev_tools:
+      title: "🛠️ Open Source, Models & Developer Tools"
+      description: "New open weights, developer frameworks, inference engines, and tools"
+    policy:
+      title: "⚖️ Policy, Governance & Society"
+      description: "Regulatory developments, AI safety, copyright, and global impact"
+
+output:
+  directory: "output/briefs"
+  formats:
+    - "markdown"
+    - "html"
+    - "json"
+
+scheduler:
+  enabled: false
+  run_at_hour: 8
+  run_at_minute: 0
+  timezone: "UTC"

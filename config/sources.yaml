@@ -1,0 +1,95 @@
+# AI & Tech News Sources Configuration
+sources:
+  - id: techcrunch_ai
+    name: "TechCrunch AI"
+    type: "rss"
+    url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+    category: "industry"
+    weight: 1.2
+    enabled: true
+    description: "Breaking startup, venture capital, and big tech AI announcements"
+
+  - id: the_verge
+    name: "The Verge AI & Tech"
+    type: "rss"
+    url: "https://www.theverge.com/rss/index.xml"
+    category: "industry"
+    weight: 1.1
+    enabled: true
+    requires_ai_filter: true
+    description: "Mainstream tech analysis, product announcements, and reviews"
+
+  - id: ars_technica
+    name: "Ars Technica"
+    type: "rss"
+    url: "https://feeds.arstechnica.com/arstechnica/technology-lab"
+    category: "dev_tools"
+    weight: 1.1
+    enabled: true
+    requires_ai_filter: true
+    description: "In-depth technical coverage of AI models, policy, and hardware"
+
+  - id: arxiv_ai
+    name: "ArXiv cs.AI"
+    type: "rss"
+    url: "https://rss.arxiv.org/rss/cs.AI"
+    category: "research"
+    weight: 1.0
+    enabled: true
+    description: "Frontier academic papers in artificial intelligence"
+
+  - id: arxiv_cl
+    name: "ArXiv cs.CL"
+    type: "rss"
+    url: "https://rss.arxiv.org/rss/cs.CL"
+    category: "research"
+    weight: 1.0
+    enabled: true
+    description: "Frontier research in computation and language (LLMs, NLP)"
+
+  - id: hf_daily_papers
+    name: "Hugging Face Daily Papers"
+    type: "api_hf"
+    url: "https://huggingface.co/api/daily_papers"
+    category: "research"
+    weight: 1.3
+    enabled: true
+    description: "Trending community-curated research papers with discussion and upvotes"
+
+  - id: hacker_news_ai
+    name: "Hacker News AI"
+    type: "api_hn"
+    url: "https://hn.algolia.com/api/v1/search_by_date"
+    category: "community"
+    weight: 1.25
+    enabled: true
+    description: "Top community-voted AI discussions, open source launches, and engineer reactions"
+
+  - id: simon_willison
+    name: "Simon Willison's Weblog"
+    type: "rss"
+    url: "https://simonwillison.net/atom/everything/"
+    category: "dev_tools"
+    weight: 1.15
+    enabled: true
+    requires_ai_filter: true
+    description: "Practitioner insights on LLMs, embeddings, and open source AI tooling"
+
+  - id: marktechpost
+    name: "MarkTechPost"
+    type: "rss"
+    url: "https://www.marktechpost.com/feed/"
+    category: "research"
+    weight: 1.05
+    enabled: true
+    description: "Technical breakdowns of newly published AI papers and open source weights"
+
+  - id: mit_tech_review
+    name: "MIT Technology Review"
+    type: "rss"
+    url: "https://www.technologyreview.com/feed/"
+    category: "policy"
+    weight: 1.2
+    enabled: true
+    requires_ai_filter: true
+    description: "Deep investigative reporting on AI ethics, societal impact, and governance"
